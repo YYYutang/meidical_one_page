@@ -2,7 +2,7 @@
   <div>
     <el-container >
         <div class="outcontainer">
-          <datasetChoose v-if="active == 1" :active='active' :type="3" @send_data="handleDataFromChild" :showDataManageStep="showDataManageStep=true"></datasetChoose>
+          <datasetChoose v-if="active == 1" class="con_datasetChoose" :active='active' :type="3" @send_data="handleDataFromChild" :showDataManageStep="showDataManageStep=true"></datasetChoose>
           <characterChoose v-if="active == 2" :active='active' :analyzeStep="3" :type="2" :label="label" @send_feat="getCheackedFeats"></characterChoose>
           <conssitencyOutcome v-if="active == 3" :active='active' :label="label" :checkedFeats="checkedFeats"></conssitencyOutcome>
         <div class="stepbutton">
@@ -70,7 +70,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .outcontainer {
   display: flex;
   width: 100%;
@@ -87,6 +87,15 @@ export default {
   display: flex;;
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
-  margin-top: 25px;
+  margin-top: 10px;
+}
+.con_datasetChoose {
+  ::v-deep .right_table {
+    width: 1350px;
+    height:620px;
+  }
+  ::v-deep .left_tree {
+    height: 620px;
+  }
 }
 </style>

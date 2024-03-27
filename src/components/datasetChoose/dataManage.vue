@@ -8,6 +8,7 @@
           <el-step title="结果展示"></el-step>
         </el-steps>
     </div>
+    <div class="bottom_container">
     <div class="left_tree">
       <el-button type="success" class="add_button" @click="dialogDiseaseVisible2 = true">添加病种</el-button>
       <el-dialog
@@ -362,7 +363,7 @@
         </div>
         <!-- 显示表数据 -->
         <div class="table_data">
-          <el-table :data="tableData" stripe style="width: 100%" class="custom-table" v-if="dataPred" :header-cell-style="headerCellStyle">
+          <el-table :data="tableData" stripe style="width: 100%" class="custom-table" v-if="dataPred" :header-cell-style="headerCellStyle"  max-height="540">
           <el-table-column type="index" width="50" label="样本序号"></el-table-column>
           <el-table-column v-for="(value, key) in tableData[0]" :key="key" :prop="key" :label="key" width="80" :sortable="true">
           <template slot-scope="{ row }">
@@ -372,6 +373,7 @@
          </el-table>
         </div>
       </el-card>
+    </div>
     </div>
   </div>
 </template>
@@ -1098,7 +1100,9 @@ export default {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-
+.bottom_container{
+  display:flex;
+}
 #DiseaseFilter {
   margin-right: 40px;
 }
@@ -1127,8 +1131,7 @@ export default {
 
 
 .left_tree{
-  display: inline-block;
-  height: 700px;
+  height: 660px;
   width: 15%;
   border-radius: 3px;
   border-left: 1px solid #e6e6e6;
@@ -1147,11 +1150,8 @@ export default {
   }
 
 .right_table {
-  display: inline-block;
-  height: 700px;
+  height: 660px;
   border: none;
-  width: 1523px;
-  position: absolute;
 }
 
 .right_table_topCard {
@@ -1259,7 +1259,6 @@ export default {
   margin-bottom: 5px;
 }
 .table_data{
-  height: 630px;
   overflow-y: auto;
 }
 </style>

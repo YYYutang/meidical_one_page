@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="dm_container">
     <div class="left_tree">
       <el-button type="success" class="add_button" @click="dialogDiseaseVisible2 = true">添加病种</el-button>
       <el-dialog
@@ -166,7 +166,7 @@
                   <button class="cool-button" @click="submitCharacterCondition">筛选病例</button>
               </div>
                 <!-- 显示筛选出来的表数据 -->
-            <el-table :data="addTableData" stripe style="width: 100%" height="450" v-show="showAddTableData">
+            <el-table :data="addTableData" stripe style="width: 100%" height="450" v-show="showAddTableData" >
               <el-table-column v-for="(value, key) in addTableData[0]" :key="key" :prop="key" :label="key" width="80">
               <template slot-scope="{ row }">
                 <div class="truncate-text">{{ row[key] }}</div>
@@ -350,9 +350,9 @@
             </p>
           </div>
           <div class="tableData" v-if="dataPre==true">
-          <el-table :data="tableData" stripe style="width: 100%" class="custom-table" v-if="dataPre==true" :header-cell-style="headerCellStyle">
+          <el-table :data="tableData" stripe style="width:auto" class="custom-table" v-if="dataPre==true" :header-cell-style="headerCellStyle" max-height="660">
             <!-- <el-table-column type="index" width="50" label="样本序号"></el-table-column> -->
-            <el-table-column v-for="(value, key) in tableData[0]" :key="key" :prop="key" :label="key" width="80" :sortable="true">
+            <el-table-column v-for="(value, key) in tableData[0]" :key="key" :prop="key" :label="key" width="120px" :sortable="true">
               <template slot-scope="{ row }">
                 <div class="truncate-text">{{ row[key] }}</div>
             </template>
@@ -1049,6 +1049,9 @@ export default {
 </script>
 
 <style scoped>
+.dm_container{
+  display:flex
+}
 #top_buttons > * {
   display: inline-block;
 }
@@ -1086,8 +1089,7 @@ export default {
 
 
 .left_tree{
-  display: inline-block;
-  height: 800px;
+  height: 780px;
   width: 15%;
   border-radius: 3px;
   border-left: 1px solid #e6e6e6;
@@ -1106,10 +1108,8 @@ export default {
   }
 
 .right_table {
-  display: inline-block;
-  height: 85%;
-  width: 75%;
-  position: absolute;
+  height: 780px;
+  width: 85%;
   border: none;
   /* overflow-y: auto; */
 }
@@ -1215,7 +1215,7 @@ export default {
 }
 .tableData {
   width: 100%;
-  height: 750px;
-  overflow-y: auto;
+  /* height: 650px;
+  overflow: auto; */
 }
 </style>

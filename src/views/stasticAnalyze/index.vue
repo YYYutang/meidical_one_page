@@ -50,24 +50,11 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.step {
-  display: block;
-  width: 100%;
-}
-.stepcontainer {
-  display: flex;
-  width: 100%;
-  height: 100%;
-}
-.stepbutton {
-  display: block;
-}
+
 .tabs{
   width: 100%;
   height: 100%;
   /* display: flex; */
 }
-.el-tabs--border-card{
-  width: 1800px;
-}
+
 </style>

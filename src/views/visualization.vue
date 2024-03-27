@@ -14,8 +14,8 @@
       </div>
 
       <div id="stepcontain" v-show="showStep">
-        <datasetChoose :showDataManageStep="showDataManageStep=false" @send_data="getTableName" v-show="dataSelectForm.isShow"></datasetChoose>
-        <div style="margin-left: 50%; margin-top:24px" v-show="dataSelectForm.isShow">
+        <datasetChoose :showDataManageStep="showDataManageStep=false" @send_data="getTableName" v-show="dataSelectForm.isShow" class="visual_datasetChoose"></datasetChoose>
+        <div style="margin-left: 50%; margin-top:10px" v-show="dataSelectForm.isShow">
             <el-button type="primary" size="small" @click="submitForm(active)"
               >下一步</el-button
             >
@@ -632,5 +632,13 @@ export default {
 //     -webkit-box-orient: vertical;
 //     overflow-y: hidden;
 // }
+.visual_datasetChoose{
+   ::v-deep .right_table {
+    height: 630px;
+  }
+   ::v-deep .left_tree {
+    height: 630px;
+  }
+}
 
 </style>

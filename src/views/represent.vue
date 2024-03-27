@@ -41,9 +41,8 @@
         </el-steps>
       </div>
       <div id="stepcontain" v-show="showStep">
-        <datasetChoose v-show="dataSelectForm.isShow" :showDataManageStep="showDataManageStep=false" @send_data="getTableName"></datasetChoose>
-        <div class="button1" style="margin-left: 38%; margin-top: 25px" v-show="dataSelectForm.isShow">
-          <el-button size="small" @click="stepBack(active)">上一步</el-button>
+        <datasetChoose v-show="dataSelectForm.isShow" :showDataManageStep="showDataManageStep=false" @send_data="getTableName" class="represent_datasetChoose"></datasetChoose>
+        <div class="button1"  v-show="dataSelectForm.isShow">
           <el-button size="small" type="primary" @click="submitForm(active)"
             >下一步</el-button
           >
@@ -169,7 +168,7 @@
             </el-checkbox-group>
           </el-form-item>
           <br />
-          <div class="button1" style="margin-left: 38%">
+          <div class="button1">
             <el-button size="small" @click="stepBack(active)">上一步</el-button>
             <el-button size="small" type="primary" @click="submitForm(active)"
               >下一步</el-button
@@ -246,7 +245,7 @@
             </el-row> -->
           </el-form-item>
           <br />
-          <div class="button1" style="margin-left: 38%">
+          <div class="button1">
             <el-button size="small" @click="stepBack(active)">上一步</el-button>
             <el-button size="small" type="primary" @click="submitForm(active)"
               >完成</el-button
@@ -611,9 +610,18 @@ export default {
   left: 15%;
   overflow-y: auto;
 }
-
+.represent_datasetChoose{
+   ::v-deep .right_table {
+    height: 630px;
+  }
+   ::v-deep .left_tree {
+    height: 630px;
+  }
+}
 .button1 {
-  position: absolute;
+  display:flex;
+  justify-content: center;
+  margin-top:10px
 }
 .text {
   font-size: 14px;
