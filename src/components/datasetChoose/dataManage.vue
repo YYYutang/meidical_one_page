@@ -356,7 +356,7 @@
         <div class="describe_content">
           <h3>数据集名称</h3>
           <p style="margin-top:0.5%">
-            <i class="el-icon-user"></i>创建人: <span>{{showDataForm.createUser}}</span>
+            <i class="el-icon-user"></i>创建人1: <span>{{showDataForm.createUser}}</span>
             <i class="el-icon-time"></i>创建时间: <span>{{showDataForm.createTime}}</span>
             <i class="el-icon-folder-opened"></i>所属类别: <span>{{showDataForm.classPath}}</span>
           </p>
